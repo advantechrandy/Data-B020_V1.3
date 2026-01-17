@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超流體散熱技術報告</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a1a;
+            --panel-bg: #2d2d2d;
+            --accent-orange: #d4a017;
+            --accent-blue: #0071c5; /* Intel Blue */
+            --text-gray: #cccccc;
+            --border-metal: #444444;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-gray);
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            border: 2px solid var(--border-metal);
+            background: var(--panel-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            padding: 40px;
+            position: relative;
+        }
+
+        /* 工業風格裝飾 */
+        .container::before {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.7rem;
+            color: var(--border-metal);
+            letter-spacing: 2px;
+        }
+
+        header {
+            border-bottom: 4px double var(--accent-orange);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--accent-orange);
+            border-left: 5px solid var(--accent-orange);
+            padding-left: 15px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+            background: rgba(212, 160, 23, 0.1);
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: #222;
+            border: 1px dashed var(--accent-blue);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid var(--border-metal);
+            padding: 10px;
+            background: #222;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #555;
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .btn-yellow {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-yellow:hover {
+            background-color: #f1b61c;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--border-metal);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: #333;
+            color: var(--accent-orange);
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #555;
+            border-top: 1px solid var(--border-metal);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>超流體散熱技術報告 V1.3</h1>
+    </header>
+
+    <section>
+        <h2>一、背景與趨勢</h2>
+        <p>隨著 AI 運算需求爆發，GPU 與 AI 加速器的功耗急遽增加。單一晶片的熱設計功耗（TDP）預計將在 2028 年攀升至 <strong>2000 W</strong> 以上。為了因應這一挑戰，傳統氣冷已達極限，業界正轉向液冷技術（Liquid Cooling）。</p>
+        
+        <div class="image-container">
+            <img src="https://cdn2.techbang.com/system/images/743676/original/7c1a5681b91b015a1000081860d2b465.jpg?1741791555" alt="超流體實機樣品">
+            <div class="image-caption">[超流體實機樣品展示]</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>二、什麼是「超流體」（Super Fluid）？</h2>
+        <div class="highlight-box">
+            <p><strong>定義：</strong>Intel 的「超流體」技術借鑑了<strong>船舶工業的空氣潤滑系統</strong>。透過在冷卻液中注入適量的<strong>微小氣泡</strong>，降低流體的黏性（Viscosity），從而大幅減少冷卻液循環時的阻力。</p>
+        </div>
+        <ul>
+            <li><strong>靈感來源：</strong>三菱重工應用於大型船舶底部的氣泡減阻技術。</li>
+            <li><strong>技術參考：</strong>您可以觀看三菱重工的船舶減阻系統技術示範。</li>
+        </ul>
+        <a href="https://youtu.be/1RZ0UOIITMk" target="_blank" class="btn-yellow">觀看：三菱重工船舶底部空氣潤滑系統</a>
+    </section>
+
+    <section>
+        <h2>三、散熱方案分類與演進</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>類型</th>
+                    <th>散熱原理</th>
+                    <th>特點</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>冷板式液冷</td>
+                    <td>管線輸送冷卻液至 Cold Plate</td>
+                    <td>目前主流，針對重點熱源。</td>
+                </tr>
+                <tr>
+                    <td>單相浸沒式</td>
+                    <td>伺服器完全浸泡，流體不變相</td>
+                    <td>依靠 CDU 循環與外部熱交換。</td>
+                </tr>
+                <tr>
+                    <td>二相浸沒式</td>
+                    <td>冷卻液接觸熱源後蒸發（相變）</td>
+                    <td>解熱能力最強，利用潛熱帶走廢熱。</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>四、關鍵技術組件</h2>
+        <ul>
+            <li><strong>超流體產生器：</strong>由夥伴（如 Mandala）開發，外型如泵浦，可將氣泡混入多種冷卻液（如合成油、氟化液等）。</li>
+        </ul>
+        
+        <div class="image-container">
+            <img src="https://cdn2.techbang.com/system/images/743677/original/7ae13a27ce431381aa56cb6fa92569d8.jpg?1741791557" alt="超流體產生器圖面">
+            <div class="image-caption">[超流體產生器構造圖面]</div>
+        </div>
+
+        <ul>
+            <li><strong>均溫板上蓋（VC Lid）：</strong>工研院開發，透過內部錐台增加表面積，解決處理器鐵蓋（Lid）造成的散熱瓶頸。</li>
+            <li><strong>高效冷卻液：</strong>如 Perstorp 的 Synmerse DC，具備高閃點與安全性。</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>五、結論與目標</h2>
+        <p>Intel 目標透過超流體技術，將伺服器解熱能力推向 <strong>2500 W</strong> 等級。其優點在於低改造成本、顯著降低熱阻（約 8.8%~11.4%），並有效提升資料中心的電力使用效率（PUE）。</p>
+    </section>
+
+    <footer>
+        &copy; 2026 CREATOR: RANDY CHEN
+    </footer>
+</div>
+
+<script>
+    // 根據個人化指令：加入 contextmenu 事件監聽器, 且不顯示提示。
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    }, false);
+</script>
+
+</body>
+</html>
